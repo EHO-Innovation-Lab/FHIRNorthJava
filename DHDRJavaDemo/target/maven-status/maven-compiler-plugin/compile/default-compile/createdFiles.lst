@@ -1,5 +1,5 @@
-com\mycompany\dhdrjavademo\DHDRService.class
-com\mycompany\dhdrjavademo\FXMLController.class
-com\mycompany\dhdrjavademo\MedicationModel.class
-com\mycompany\dhdrjavademo\PatientModel.class
-com\mycompany\dhdrjavademo\MainApp.class
+com\medic\eho\fhirnorth\dhdrjavademo\DHDRService.class
+com\medic\eho\fhirnorth\dhdrjavademo\PatientModel.class
+com\medic\eho\fhirnorth\dhdrjavademo\MainApp.class
+com\medic\eho\fhirnorth\dhdrjavademo\FXMLController.class
+com\medic\eho\fhirnorth\dhdrjavademo\MedicationModel.class

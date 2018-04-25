@@ -10,7 +10,7 @@
 <?import javafx.scene.control.cell.*?> 
 <?import javafx.collections.*?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.dhirjavademo.FXMLController" alignment="center" hgap="10" vgap="10" >
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.medic.eho.fhirnorth.dhirjavademo.FXMLController" alignment="center" hgap="10" vgap="10" >
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>

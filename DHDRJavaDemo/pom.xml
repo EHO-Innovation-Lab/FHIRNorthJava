@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>com.mycompany.dhdrjavademo.MainApp</mainClass>
+        <mainClass>com.medic.eho.fhirnorth.dhdrjavademo.MainApp</mainClass>
     </properties>
 
     <organization>
