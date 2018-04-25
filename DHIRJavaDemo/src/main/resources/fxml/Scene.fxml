@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.dhirjavademo.FXMLController" alignment="center" hgap="10" vgap="10" >
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+    <children>
+        <Label text="Digital Health Immunization Repository (DHIR)"
+               GridPane.columnIndex="0" GridPane.rowIndex="0"
+               fx:id="titleLabel" />
+        
+        <HBox spacing="10" alignment="bottom_right"
+              GridPane.columnIndex="1" GridPane.rowIndex="0" >
+            <Button text="Sample Message" 
+                    onAction="#sampleButtonAction" />
+        </HBox>
+        
+        <HBox spacing="10" alignment="center"
+              GridPane.columnIndex="0" GridPane.rowIndex="1"
+              GridPane.columnSpan="2"
+              fx:id="form">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <children>
+                <Label text="Ontario Immunization ID (OIID):" />
+                <TextField 
+                    fx:id="oiidTextField" />
+                <Button text="Search"
+                        fx:id="searchButton"
+                        onAction="#searchButtonAction"/>
+            </children>
+        </HBox>
+        
+        <Label 
+               GridPane.columnIndex="0" GridPane.rowIndex="2"
+               fx:id="oiidErrorLabel" />
+        
+        <Label text="Immunizations:"
+               GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TableView prefHeight="300" 
+                   GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"
+                   disable="true"
+                   fx:id="immunizationTableView" >
+            <columns>
+                <TableColumn text="Immunization" prefWidth="250">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="immunization" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Date" prefWidth="175">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateGiven" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                </FXCollections>
+            </items>
+        </TableView>
+    </children>
+</GridPane>
+
+
