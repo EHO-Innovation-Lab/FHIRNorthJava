@@ -1,35 +1,32 @@
 # FHIR North 2018 Java Application
-JavaFX application making use of the HL7 FHIR STU3 Library to query DHDR &amp; DHIR
+JavaFX applications making use of the HL7 FHIR STU3 Library to query DHDR &amp; DHIR
+
+## Getting Started
+
+### Before You Begin
+Make sure you have the following installed:
+- Java Version 1.8.0
+
+### Downloading the Applications
+The code can be found at https://www.innovation-lab.ca in the [Code Sharing Repository](https://www.innovation-lab.ca/repository)
+
+### Running the Applications
+For successful querying to the DHDR/DHIR services, the applications require your Unique Sender Identifier to run.
+
+1. Locate your Unique Sender Identifier here: https://www.innovation-lab.ca/Test-Portal
+2. Add your Unique Sender Identifier to the indicated spot in the DHDRService.java/DHIRService.java files.
+
+### Troubleshooting the Applications
+A Q&A thread for the applications can be found at the [Innovation Lab Forums](https://www.innovation-lab.ca/discussions/topic/q-a-for-fhir-in-java/)
 
 ## Libraries
-The major library used was [HAPI FHIR](http://hapifhir.io/)
-
-## Code Samples
-### Adding Headers to the Client
-The following code block shows how to add headers to the FHIR client:
-```AdditionalRequestHeadersInterceptor header = new AdditionalRequestHeadersInterceptor();```
-```headers.addHeaderValue("ClientTxID", UUID.randomUUID().toString());```
-```client.registerInterceptor(headers);```
-
-### Searching
-The following code show how to build and execute a search using the FHIR client:
-``` 
-Bundle results = client.search()
-  .forResource(Immunization.class)
-  .where(Immunization.PATIENT.hasChainedProperty(Patient.IDENTIFIER.exactly().identifier(searchString)))
-  .returnBundle(Bundle.class)
-  .execute();
-```
+These applications make use of the [HAPI FHIR](http://hapifhir.io/) library.
 
 ## Things to Note
-### Chaining Properties
-In order to query properties of referenced resources, use the .hasChainedProperty method:
-```Immunization.PATIENT.hasChainedProperty(Patient.IDENTIFIER.exactly().identifier(searchString)```
-
 ### Disable Metadata Validation
 The HAPI FHIR library sends an initial metadata query for validation any time a client preforms a query.
 In order to query DHIR/DHDR, this must be disabled on the client:
 ```ctx.getRestfulClientFactory().setServerValidationMode(ServerValidationModeEnum.NEVER)```
 
 ## Author
-Dawne Pierce - Ideaworks MEDIC
+**Dawne Pierce** - Ideaworks MEDIC
